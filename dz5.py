@@ -2,13 +2,17 @@
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
 
-n = int(input('Введите число фибаначи: '))
-my_list = [1 for i in range(n*2+1)]
+n = int(input('Введите число для списка фибоначи: '))
 
-my_list[n] = 0
-my_list[n-2] = -1
-for i in range(1, n-1):
-    my_list[(n+2)+i] = my_list[((n+2)+i)-2] + my_list[((n+2)+i)-1]
-    my_list[(n-2)-i] = my_list[((n-2)-i)+2] - my_list[((n-2)-i)+1]
-    
-print(my_list)
+if n == 1:
+    my_list = [1]
+    print(my_list)
+else:
+    my_list = [1 for i in range(n*2+1)]
+    my_list[n] = 0
+    my_list[n-2] = -1
+    for i in range(1, n-1):
+        my_list[(n+2)+i] = my_list[((n+2)+i)-2] + my_list[((n+2)+i)-1]
+        my_list[(n-2)-i] = my_list[((n-2)-i)+2] - my_list[((n-2)-i)+1]
+        
+    print(my_list)
