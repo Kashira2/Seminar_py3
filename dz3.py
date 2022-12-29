@@ -11,7 +11,7 @@ for i in range(size):
     my_list.append(round(random.uniform(0,10), 4))
 print(my_list)
 max = int(0)
-min = int(5000)
+min = int(500000000)
 for i in range(size):
     my_list[i] = str(my_list[i])
     number = my_list[i].split('.')
