@@ -1,96 +1,116 @@
-#  Создайте словать заданный по формуле 3*n+1, где n это ключ, а формула значение
+######################################  кортеж .  неизменяемый список. (можем только прочесть)
 
-# *Пример:*
+# my_list = [23, 424, 241, 12]
+# my_tuple = tuple(my_list)
 
-# - Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
-
-
-# my_dict = {}         #создать словарь
-
-# number = int(input('Введите целое число: '))
-
-# for n in range(1, number+1):
-#     my_dict[n] = 3*n + 1
-
-# pront(my_dict.get(3))          # тут берем значение, которое нам нужно
-# pront(my_dict.get(7, 'Такого ключа нет'))   
-
-##########################################################################################
-
-# my_string = 'Питон самый лучший язык в мире'
-
-# my_list = ['1', '2', '34', '5', '6', '7', '8']
-# glue = ''
-
-# my_string = my_string.replace('и', '$')               # замена всех букв 'и'
-# print(my_string)
-
-# print(''.join(my_list))                    #склейка
-# print(glue.join(my_list))                  # можно так
-
-# print(my_string.startswith('пит'))                          # проверка на тру и фолсе начало строки
-
-# print(my_string.lower().startswith('пит'))                    # проверка если написал не заглавными
-
-# print(my_string.upper().startswith('ПИТ'))                        # проверка если написал заглавными
-
-# print(my_string.endswith('ире'))                                    # проверка в конце строки
-
-# print(my_string.strip())                       # если много пробелов и прочего в строке, чтобы вывести без них
-#  rstrip   # справа 
-#  lstrip    # слева
-
-####################################################################################################
-
-# Найдите корни квадратного уравнения Ax² + Bx + C = 0 
-# с помощью математических формул нахождения корней квадратного уравнения
-
-# equation = '-3*x**2 + 5*x - 6 = 0'
+# print(my_tuple)
 
 
-# equation = equation.replace('**2', '')
-# #equation = equation.replace(' = 0', '')
-# equation = equation.replace('*x', '')
+####################################        функция возвращает а и в не кортежем
 
-# equation = equation.split(' ')
+# def func():
+#     a = 5
+#     b = 6
+#     return a, b
+
+# result1, result2 = func()
+
+# print(result1)
+# print(result2)
+
+################################        функция возвращает а и в  кортежем
+
+# def func():
+#     a = 5
+#     b = 6
+#     return a, b
+
+# result = func()
+
+# print(result)
+
+####################################################################
+
+# def func():
+#     a = 5
+#     b = 6
+#     c = 7
+#     return a, b, c
+
+# result1, _,result2 = func()      # черточка пропускает элемент (обозначение ненужной переменной)
+# result1, *result2 = func()      # result2 = все значения между result1 и result2
+
+# print(result1)
+# print(result2)
+
+#######################################################    множества
+
+# my_set = {234, 214, 124, 43525, 2525, 122, 12}
+
+# print(my_set)                # рандомно выдает значения
+
+# my_set.add(67)   # добавляет число
+
+# print(my_set)
+
+# # дубликатов быть во множестве не может
+# my_list = {23, 23, 23, 43525, 2525, 122, 12}
+
+# print(set(my_list))  
+# #  перевод из листа в множества так, что он не повторил дубликаты
+
+# ###########################################################             словарииииииии
 
 
-# a = int(equation[0])
-# if equation[1] == '+':
-#     b = int(equation[2])
-# else:
-#     b = int(equation[2]) * -1
+my_dict = {4: 'sfgf', 6: 'sfgf', 'two' : 'двойка', (1,2,3): 'здесь у нас кортеж', True: 'правда'}
 
-# if equation[3] == '+':
-#     c = int(equation[4])
-# else:
-#     c = int(equation[4]) * -1
+# print(my_dict[4])
+# print(my_dict.get(5)) # если значения нет, то выдаст None и программа не сломается
+# print(my_dict.get(5), 'Ничего нет') # если значения нет, то выдаст то, что написал, а если есть то выдаст то, что есть
 
-# print(a, b, c)
+# my_dict[5] = 'это пять'         # добавили значение в словарь
 
-# discriminant = b**2 - 4*a*c
+# for
 
-# def function(discriminant):
-#     if discriminant < 0:
-#         return ('решений нет')
-#     elif discriminant == 0:
-#         return -(b/(2*a))
-#     else:
-#         x1 = round((-b + (discriminant)**0.5)/(2*a), 3)
-#         x2 = round((-b - (discriminant)**0.5)/(2*a), 3)
-#         return print(f'{x1} {x2}')
+# for i in my_dict:          # ключи вернет
+#     print(i)
 
-# z = function(discriminant)
-# print(z)
+# for i in my_dict.keys():    # ключи вернет
+#     print(i)
 
-#####################################################################################
-#  решение препода
+# for i in my_dict.values():    # значения вернет
+#     print(i)
 
-equation = '-3*x**2 + 5*x - 6 = 0'
+# for i in my_dict.items():    # все вернет
+#     print(i)
 
-def create_koef(equation: str):
-    new_equation = equation.replace(' ', '').replace('=0', '')\
-        .replace('+', ' ').replace('-', ' -')
-    new_equation = new_equation.split()
-    print(new_equation)
-create_koef(equation)
+# for k, v in my_dict.items():    # все вернет
+#     print(k, v)
+
+###############################################################  файлыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыы
+
+
+# file = open('text.txt', 'w')   # создает файл и перезаписывает туда, даже если файл такой уже был
+# file = open('text.txt', 'w', encoding='UTF-8')        #  чтобы работать с кириллицей
+
+# file.write('Записать эту строку')
+# file.close()                 # обязательно закрыть
+
+
+# file = open('text.txt', 'r', encoding='UTF-8')        #  читать файл
+
+# file.read()
+# file.readline()        # прочитает одну строку
+# data = file.readlines()        # каждую строку засунет в список
+
+# file.close()                 # обязательно закрыть
+
+# print(data)
+
+# file = open('text.txt', 'a', encoding='UTF-8')         # дописывает файл
+# file.write('\nеще однаа строка')
+
+# file.close()
+
+# with open('text.txt', 'a', encoding='UTF-8')  as data:        # работать без close
+#     data.write('dsadad')
